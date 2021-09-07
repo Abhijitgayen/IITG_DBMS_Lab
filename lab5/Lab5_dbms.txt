@@ -1,0 +1,72 @@
+ /*Q1*/
+DROP DATABASE IF EXISTS Graph;
+CREATE DATABASE Graph;
+USE Graph;
+CREATE TABLE nodes(
+ node_name VARCHAR(2),
+ x INT NOT NULL,
+ y INT NOT NULL,
+CONSTRAINT NODE_ID PRIMARY KEY(x,y)
+);
+/*Q1 a)*/
+INSERT INTO nodes(node_name,X,Y)
+VALUES('a',12,14),('b',5,1),('c',13,14),('d',11,14),('e',5,5),('f',12,12),('g',12,10),('h',21,21);
+/*Q1 b)*/
+SELECT * FROM nodes;
+/*Q1 C*/
+SELECT * FROM nodes WHERE x=y;
+
+/*Q2*/
+CREATE TABLE edges (
+ edge_name VARCHAR(2),
+ weight INTEGER NOT NULL,
+ sx INT NOT NULL,
+ sy INT NOT NULL,
+ ex INT NOT NULL,
+ ey INT NOT NULL,
+CONSTRAINT edge_ID PRIMARY KEY(sx,sy,ex,ey)
+);
+/*Q2 a)*/
+INSERT INTO edges(edge_name,weight,sx,sy,ex,ey)
+VALUE('ab',1,12,14,5,1),('bc',1,12,14,11,14),('cd',1,11,14,5,1),('ef',1,12,10,21,21),('gh',1,12,14,12,10),('fg',1,5,1,12,10),('gf',1,5,5,12,12),('ij',1,12,12,21,21);
+/*Q2 b)*/
+UPDATE edges SET weight=5 WHERE sx=12 AND sy=12 AND ex=12 AND ey=10;
+UPDATE edges SET weight=15 WHERE sx=12 AND sy=12 AND ex=21 AND ey=21;
+
+/*Q2 c)*/
+SELECT * FROM edges;
+
+/*Q3 a)*/
+DROP DATABASE IF EXISTS Graph;
+CREATE DATABASE Graph;
+USE Graph;
+CREATE TABLE nodes(
+ node_name VARCHAR(2),
+ x INT NOT NULL,
+ y INT NOT NULL,
+CONSTRAINT NODE_ID PRIMARY KEY(x,y)
+);
+CREATE TABLE edges (
+ edge_name VARCHAR(2),
+ weight INTEGER NOT NULL,
+ sx INT NOT NULL,
+ sy INT NOT NULL,
+ ex INT NOT NULL,
+ ey INT NOT NULL,
+CONSTRAINT edge_ID PRIMARY KEY(sx,sy,ex,ey),
+FOREIGN KEY(sx,sy) REFERENCES nodes(x,y)on delete  CASCADE on UPDATE no ACTION,
+FOREIGN KEY(ex,ey) REFERENCES nodes(x,y)on delete  CASCADE on UPDATE CASCADE
+);
+
+/*insert data in this data base*/
+INSERT INTO nodes(node_name,X,Y)
+VALUES('a',5,5),('b',15,5),('c',5,3),('d',11,3);
+INSERT INTO edges(edge_name,weight,sx,sy,ex,ey)
+VALUE('ab',10,5,5,15,5),('ad',3,5,5,11,3),('ac',2,5,5,5,3),('dc',6,11,3,5,3),('bc',7,15,5,5,3);
+SELECT * FROM nodes;
+SELECT * FROM edges;
+
+/*Q3 b)*/
+DELETE FROM nodes WHERE x=5 AND y=5;
+SELECT * FROM nodes;
+SELECT * FROM edges;

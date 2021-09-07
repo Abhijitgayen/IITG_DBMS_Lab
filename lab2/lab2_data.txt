@@ -1,0 +1,4 @@
+OS , CS346 , 6  , AS
+DBMS , MA518 , 6  , AA
+Network , CS348 , 6  , AB
+Network_Lab , CS349 , 3  , AB

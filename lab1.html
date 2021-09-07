@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lab_1 My work</title>
+     <style>
+          * {
+               padding: 0px;
+               margin: 0px;
+          }
+          html{
+               background-color: black;
+               scroll-behavior: smooth;
+          }
+          .welcome__data {
+               padding-top: 30px;
+               background-color: rgba(31, 147, 248, 0.87);
+               color: white;
+               text-align: center;
+               border-radius: 5px;
+          }
+
+          .welcome__data p {
+               /* width: 100%; */
+               padding: 15px;
+               text-align: justify;
+          }
+
+          .table__data {
+               background-color: rgba(255, 0, 0, 0.733);
+               padding: 60px;
+               border-radius: 5px;
+          }
+          table {
+               color: white;
+               border-collapse: collapse;
+               width: 100%;
+          }
+          td,
+          th {
+               padding: 6px;
+               border: 1px solid white;
+          }
+          td{
+               text-align: center;
+          }
+          .back__ground {
+               padding: 0px 40px;
+               /* width: 100%; */
+               height: 100vh;
+               background: url('https://source.unsplash.com/user/erondu/1600x900') center no-repeat;
+               background-attachment: fixed;
+               background-size: cover;
+               backface-visibility: hidden;
+
+          }
+          .all{
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               flex-direction: column;
+               height: 100vh;
+          }
+          @media screen  and (max-width:558px){
+               .back__ground{
+                    height: auto;
+                    width: 558px;
+                    padding: 0px;
+               }
+               .all{
+                    width: 558px;
+                    /* background-color: aqua; */
+                    height: auto;
+               }
+               .table__data{
+                    padding: 19px;
+               }
+               .welcome__data{
+                    margin-top: 25px;
+                    padding: 10px;
+                    width: 100%;
+               }
+          }
+          .link__data{
+               background-color:rgba(31, 147, 248, 0.897) ;
+               padding: 12px;
+               border-radius: 5px;
+          }
+          .link__data a{
+               font-size: 19px;
+               font-variant: small-caps;
+               color: white;
+               text-decoration: none;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="back__ground">
+          <div class="all">
+          <div class="welcome__data">
+               <h1>Welcome My First Lab Work</h1>
+               <hr>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam itaque autem eveniet similique
+                    quaerat voluptatibus nesciunt! Voluptatem doloremque sint, rem impedit neque cum! Aut, eius?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolore a ad nam distinctio sapiente amet ut odit, nesciunt sunt possimus labore repellendus saepe dolorum culpa? Ullam exercitationem cupiditate sit?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quasi ut eligendi.
+                    Inventore tenetur accusantium illum fugit?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt voluptatum quibusdam porro, eligendi rem fuga? Officia architecto, cumque beatae impedit neque ullam tempore facilis qui aliquam sed vitae eum eligendi.</p>
+          </div>
+          <div class="table__data">
+               <table>
+                    <tr>
+                         <td>
+                              Project name
+                         </td>
+                         <td>
+                              Details
+                         </td>
+                         <td>
+                              Duration
+                         </td>
+                    </tr>
+                    <tr>
+                         <td>
+                              Student data system
+                         </td>
+                         <td>
+                              Creat a system to store student data
+                         </td>
+                         <td>5 weeks</td>
+                    </tr>
+                    <tr>
+                         <td>
+                              Bank data system
+                         </td>
+                         <td>To store account deatils of the customar</td>
+                         <td>
+                              4 weeks
+                         </td>
+                    </tr>
+                    <tr>
+                         <td>
+                               News Blog
+                         </td>
+                         <td>
+                              Creat a Blog to post news
+                         </td>
+                         <td>5 weeks</td>
+                    </tr>
+               </table>
+          </div>
+          <div class="link__data">
+               <a href="https://www.iitg.ac.in/ashok/MA518/" target="_blank">course link</a>
+          </div>
+     </div>
+     </div>
+</body>
+
+</html>
